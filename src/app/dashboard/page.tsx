@@ -1,5 +1,6 @@
  
 import {Content1} from "@/components/dashboard/content1"
+import {Content2} from "@/components/dashboard/content2"
 import Searchbar from "@/components/dashboard/searchbar";
 import Header from "@/components/heroheader";
 function Page() {
@@ -8,6 +9,7 @@ function Page() {
         <Searchbar />
         <Header />
         <Content1/>
+        <Content2/>
         </>
     );
 }

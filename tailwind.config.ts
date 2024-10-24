@@ -22,9 +22,11 @@ const config: Config = {
   },
   plugins: [require("tailwindcss-animate"),
 	require('daisyui')
+	
   ],
   daisyui: {
     themes: ["light"],
   },
+
 };
 export default config;
