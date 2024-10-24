@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-  			background: 'var(--background)',
+  			background: 'base-100',
   			foreground: 'var(--foreground)'
   		},
   		borderRadius: {
@@ -20,6 +20,8 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+	require('daisyui')
+  ],
 };
 export default config;
