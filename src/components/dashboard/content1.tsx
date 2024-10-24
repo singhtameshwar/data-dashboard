@@ -163,7 +163,7 @@ export const Content1 = () => {
   }, []);
 
   return (
-    <div className="py-12 px-4">
+    <div className="py-4 px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
         <div className="flex flex-col justify-center items-center space-y-5">
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 pt-3">
