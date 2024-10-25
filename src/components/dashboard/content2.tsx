@@ -75,13 +75,12 @@ export const Content2 = () => {
             .attr("stroke", "#fff")
             .attr("stroke-width", "2px");
 
-        // Adjusted label positioning
         g.selectAll("text")
             .data(pie(data))
             .join("text")
             .attr("transform", (d) => {
                 const [x, y] = arc.centroid(d);
-                const offsetX = x * 1.3; // Adjust for better readability outside the arc
+                const offsetX = x * 1.3; 
                 const offsetY = y * 1.3;
                 return `translate(${offsetX}, ${offsetY})`;
             })
