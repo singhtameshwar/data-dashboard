@@ -12,7 +12,7 @@ export const SidebarWithContent = () => {
     { category: 'Getting Started', items: ['Introduction'] },
     {
       category: 'Dashboard',
-      items: ['Cta', 'Feature', 'Footer', 'Pricing', 'Hero', "Faq's", 'Blog'],
+      items: ['product', 'conversation', 'Footer', 'Pricing'],
     }
   ];
 
@@ -37,6 +37,7 @@ export const SidebarWithContent = () => {
   };
 
   return (
+    <div className='pt-4'>
     <div className="flex min-h-screen">
       <aside className="w-full h-full p-6 sm:w-60">
         <input
@@ -82,6 +83,7 @@ export const SidebarWithContent = () => {
           </div>
         )}
       </main>
+    </div>
     </div>
   );
 };

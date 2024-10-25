@@ -1,15 +1,21 @@
+import { BarChart } from "lucide-react";
+
 export default function Searchbar() {
   return (
     <div className="navbar bg-base-200 shadow-lg">
-      <div className="navbar-start ml-4 lg:ml-[140px] flex flex-1 items-center">
-        <div className="form-control w-full max-w-xs lg:max-w-md">
+      <div className="navbar-start ml-4 flex items-center space-x-4 md:w-full md:space-x-6">
+        <div className="flex items-center mr-2 md:mr-4">
+          <BarChart className="mr-2" />
+          <h2 className="text-lg font-semibold">Data Dashboard</h2>
+        </div>
+        <div className="form-control flex-1 max-w-xs md:max-w-md mx-auto">
           <input
             type="text"
             placeholder="Search"
             className="input input-bordered w-full"
           />
         </div>
-        <button className="btn btn-ghost btn-square ml-2">
+        <button className="btn btn-ghost btn-square">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -26,8 +32,7 @@ export default function Searchbar() {
           </svg>
         </button>
       </div>
-
-      <div className="navbar-end mr-4 lg:mr-[140px] flex items-center space-x-4">
+      <div className="navbar-end mr-4 flex items-center space-x-4">
         <button className="btn btn-ghost btn-circle relative">
           <div className="indicator">
             <svg
@@ -47,7 +52,6 @@ export default function Searchbar() {
             <span className="badge badge-xs badge-primary indicator-item"></span>
           </div>
         </button>
-
         <div className="dropdown dropdown-end z-50">
           <button tabIndex={0} className="btn btn-ghost text-black btn-circle">
             <svg
@@ -67,22 +71,16 @@ export default function Searchbar() {
           </button>
           <ul
             tabIndex={0}
-            className="menu dropdown-content p-2 mr-[160px] rounded-box w-28 z-50 h-[calc(100%-20px)]"
+            className="menu dropdown-content p-2 rounded-box w-28 z-50"
           >
             <li>
-              <a href="#" className="text-sm">
-                Profile
-              </a>
+              <a href="#" className="text-sm">Profile</a>
             </li>
             <li>
-              <a href="#" className="text-sm">
-                Settings
-              </a>
+              <a href="#" className="text-sm">Settings</a>
             </li>
             <li>
-              <a href="#" className="text-sm">
-                Logout
-              </a>
+              <a href="#" className="text-sm">Logout</a>
             </li>
           </ul>
         </div>
