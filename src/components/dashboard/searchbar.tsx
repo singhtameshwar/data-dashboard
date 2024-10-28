@@ -2,24 +2,26 @@ import { BarChart, Search } from "lucide-react";
 
 export default function Searchbar() {
   return (
-    <div className="navbar bg-base-200 shadow-lg">
-      <div className="navbar-start ml-4 flex items-center space-x-4 md:w-full md:space-x-6">
-        <div className="flex items-center mr-2 md:mr-4">
+    <div className="navbar bg-base-200 shadow-lg px-4">
+      <div className="navbar-start flex items-center space-x-4">
+        <div className="flex items-center">
           <BarChart className="mr-2" />
           <h2 className="text-lg font-semibold">Data Dashboard</h2>
         </div>
-        <div className="form-control flex-1 max-w-auto md:max-w-md mx-auto ">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered ml- w-full ml-[180px]"
-          />
-        </div>
       </div>
-      <button className="mr-[500px]">
-        <Search />
-      </button>
-      <div className="navbar-end mr-4 flex items-center space-x-4">
+
+      <div className="navbar-center w-full max-w-lg flex items-center justify-center space-x-2">
+        <input
+          type="text"
+          placeholder="Search"
+          className="input input-bordered w-full max-w-xs"
+        />
+        <button className="btn btn-ghost btn-circle">
+          <Search />
+        </button>
+      </div>
+
+      <div className="navbar-end flex items-center space-x-4">
         <button className="btn btn-ghost btn-circle relative">
           <div className="indicator">
             <svg
@@ -39,8 +41,9 @@ export default function Searchbar() {
             <span className="badge badge-xs badge-primary indicator-item"></span>
           </div>
         </button>
-        <div className="dropdown dropdown-end z-50">
-          <button tabIndex={0} className="btn btn-ghost text-black btn-circle">
+
+        <div className="dropdown dropdown-end">
+          <button tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -58,23 +61,11 @@ export default function Searchbar() {
           </button>
           <ul
             tabIndex={0}
-            className="menu dropdown-content p-2 rounded-box w-28 z-50"
+            className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-28"
           >
-            <li>
-              <a href="#" className="text-sm">
-                Profile
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-sm">
-                Settings
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-sm">
-                Logout
-              </a>
-            </li>
+            <li><a href="#" className="text-sm">Profile</a></li>
+            <li><a href="#" className="text-sm">Settings</a></li>
+            <li><a href="#" className="text-sm">Logout</a></li>
           </ul>
         </div>
       </div>
