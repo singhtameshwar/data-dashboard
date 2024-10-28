@@ -2,14 +2,13 @@ import { BarChart, Search } from "lucide-react";
 
 export default function Searchbar() {
   return (
-    <div className="navbar bg-base-200 shadow-lg px-4">
+    <div className="navbar bg-base-200 shadow-lg sticky top-0 px-4 z-10">
       <div className="navbar-start flex items-center space-x-4">
         <div className="flex items-center">
           <BarChart className="mr-2" />
           <h2 className="text-lg font-semibold">Data Dashboard</h2>
         </div>
       </div>
-
       <div className="navbar-center w-full max-w-lg flex items-center justify-center space-x-2">
         <input
           type="text"
