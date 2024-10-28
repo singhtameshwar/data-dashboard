@@ -32,10 +32,7 @@ export function Piechart() {
   return (
 
     <>
-      <div id="parent" className="flex">
-
-
-
+      <div id="parent" className="flex bg-grey-400">
         <Card className="">
           <div className="text-white rounded-lg shadow-md p-6 max-w-3xl mx-auto mt-8">
             <div className="flex justify-between items-center mb-4">
@@ -58,7 +55,7 @@ export function Piechart() {
                 <tr className="border-b border-gray-800">
                   <td className="flex items-center py-4 space-x-3">
                     <img
-                      src="https://via.placeholder.com/32"
+                      src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg"
                       alt="profile"
                       className="rounded-full w-8 h-8"
                     />
@@ -67,7 +64,7 @@ export function Piechart() {
                       <p className="text-sm text-gray-400">ronalrcs@mail.com</p>
                     </div>
                   </td>
-                  <td><Badge>Member</Badge></td>
+                  <td><Badge color="red">Member</Badge></td>
                   <td className="text-gray-300">#74568320</td>
                   <td className="text-gray-400">5 min ago</td>
                   <td className="font-semibold text-white">$12,408.20</td>
@@ -76,7 +73,7 @@ export function Piechart() {
                 <tr className="border-b border-gray-800">
                   <td className="flex items-center py-4 space-x-3">
                     <img
-                      src="https://via.placeholder.com/32"
+                      src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4380.jpg"
                       alt="profile"
                       className="rounded-full w-8 h-8"
                     />
@@ -94,7 +91,7 @@ export function Piechart() {
                 <tr>
                   <td className="flex items-center py-4 space-x-3">
                     <img
-                      src="https://via.placeholder.com/32"
+                      src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4381.jpg"
                       alt="profile"
                       className="rounded-full w-8 h-8"
                     />
@@ -113,10 +110,7 @@ export function Piechart() {
           </div>
         </Card>
 
-
-
-
-        <div id="second" className="">
+        <div id="second" >
           <CardContent className="flex-1 pb-0">
             <div className="mx-auto aspect-square max-w-[250px]">
               <PieChart width={250} height={250}>
