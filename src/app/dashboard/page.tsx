@@ -1,6 +1,6 @@
  
-import {Content1} from "@/components/dashboard/content1"
-import {Content2} from "@/components/dashboard/content2"
+import {Content1} from "@/components/dashboard/barchart"
+import {Piechart} from "@/components/dashboard/piechart"
 import Searchbar from "@/components/dashboard/searchbar";
 import {SidebarWithContent}from "@/components/dashboard/slidebar"
 function Page() {

@@ -1,4 +1,4 @@
-import { BarChart } from "lucide-react";
+import { BarChart, Search } from "lucide-react";
 
 export default function Searchbar() {
   return (
@@ -8,30 +8,17 @@ export default function Searchbar() {
           <BarChart className="mr-2" />
           <h2 className="text-lg font-semibold">Data Dashboard</h2>
         </div>
-        <div className="form-control flex-1 max-w-xs md:max-w-md mx-auto">
+        <div className="form-control flex-1 max-w-auto md:max-w-md mx-auto ">
           <input
             type="text"
             placeholder="Search"
-            className="input input-bordered w-full"
+            className="input input-bordered ml- w-full ml-[180px]"
           />
         </div>
-        <button className="btn btn-ghost btn-square">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </button>
       </div>
+      <button className="mr-[500px]">
+        <Search />
+      </button>
       <div className="navbar-end mr-4 flex items-center space-x-4">
         <button className="btn btn-ghost btn-circle relative">
           <div className="indicator">
@@ -74,13 +61,19 @@ export default function Searchbar() {
             className="menu dropdown-content p-2 rounded-box w-28 z-50"
           >
             <li>
-              <a href="#" className="text-sm">Profile</a>
+              <a href="#" className="text-sm">
+                Profile
+              </a>
             </li>
             <li>
-              <a href="#" className="text-sm">Settings</a>
+              <a href="#" className="text-sm">
+                Settings
+              </a>
             </li>
             <li>
-              <a href="#" className="text-sm">Logout</a>
+              <a href="#" className="text-sm">
+                Logout
+              </a>
             </li>
           </ul>
         </div>
