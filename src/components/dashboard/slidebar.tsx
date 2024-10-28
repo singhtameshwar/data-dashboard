@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-import Header from"@/components/dashboard/heroheader"
-import {Content1} from"@/components/dashboard/content1"
-import {Content2} from"@/components/dashboard/content2"
+import Header from "@/components/dashboard/heroheader";
+import { Content1 } from "@/components/dashboard/barchart";
+import { Piechart } from "@/components/dashboard/piechart";
 
 export const SidebarWithContent = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,7 +12,7 @@ export const SidebarWithContent = () => {
     { category: 'Getting Started', items: ['Introduction'] },
     {
       category: 'Dashboard',
-      items: ['product', 'conversation', 'Footer', 'Pricing'],
+      items: ['product', 'conversation', 'Footer', 'Pricing', 'Hero'],
     }
   ];
 
@@ -37,53 +37,53 @@ export const SidebarWithContent = () => {
   };
 
   return (
-    <div className='pt-4'>
-    <div className="flex min-h-screen">
-      <aside className="w-full h-full p-6 sm:w-60">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="mb-4 p-2 w-full border border-gray-300 rounded"
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-        <nav className="space-y-8 text-sm h-full overflow-y-auto">
-          {links.map((section) => (
-            <div className="space-y-2" key={section.category}>
-              <h2 className="text-sm font-semibold tracking-widest uppercase">
-                {section.category}
-              </h2>
-              <div className={`flex flex-col space-y-1 ${section.category === 'Dashboard' ? 'flex-grow' : ''}`}>
-                {section.items
-                  .filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                  .map((item) => (
-                    <a
-                      key={item}
-                      rel="noopener noreferrer"
-                      href=""
-                      onClick={() => handleLinkClick(item)}
-                      className="block p-1 hover:bg-gray-200 rounded"
-                    >
-                      {item}
-                    </a>
-                  ))}
+    <div className="pt-4">
+      <div className="flex flex-col lg:flex-row min-h-screen">
+        <aside className="w-full h-full p-4 sm:p-6 sm:w-60 lg:w-1/4 bg-white shadow-md">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="mb-4 p-2 w-full border border-gray-300 rounded"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+          <nav className="space-y-8 text-sm h-full overflow-y-auto">
+            {links.map((section) => (
+              <div className="space-y-2" key={section.category}>
+                <h2 className="text-sm font-semibold tracking-widest uppercase">
+                  {section.category}
+                </h2>
+                <div className={`flex flex-col space-y-1 ${section.category === 'Dashboard' ? 'flex-grow' : ''}`}>
+                  {section.items
+                    .filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()))
+                    .map((item) => (
+                      <a
+                        key={item}
+                        rel="noopener noreferrer"
+                        href="#"
+                        onClick={() => handleLinkClick(item)}
+                        className="block p-1 hover:bg-gray-200 rounded transition-colors"
+                      >
+                        {item}
+                      </a>
+                    ))}
+                </div>
               </div>
+            ))}
+          </nav>
+        </aside>
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 bg-gray-50">
+          {blockContent ? (
+            <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: blockContent }} />
+          ) : (
+            <div className="text-gray-700">
+              <Header />
+              <Content1 />
+              <Piechart />
             </div>
-          ))}
-        </nav>
-      </aside>
-      <main className="flex-1 p-6 bg-gray-50">
-        {blockContent ? (
-          <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: blockContent }} />
-        ) : (
-          <div className="text-gray-700">
-       <Header/>
-       <Content1/>
-       <Content2/>
-          </div>
-        )}
-      </main>
-    </div>
+          )}
+        </main>
+      </div>
     </div>
   );
 };
