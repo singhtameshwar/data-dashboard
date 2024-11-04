@@ -1,28 +1,14 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from "@/components/dashboard/heroheader";
 import { Content1 } from "@/components/dashboard/barchart";
 import { Piechart } from "@/components/dashboard/piechart";
-import { Menu } from "lucide-react";
+import { Menu, ArrowLeft } from "lucide-react";
 
 export const SidebarWithContent = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [blockContent, setBlockContent] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  useEffect(() => {
-    // Lock scroll on the body when the sidebar is open
-    if (isSidebarOpen) {
-      document.body.classList.add('overflow-hidden');
-    } else {
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    // Cleanup function to remove overflow-hidden if component unmounts
-    return () => {
-      document.body.classList.remove('overflow-hidden');
-    };
-  }, [isSidebarOpen]);
 
   const links = [
     { category: 'Getting Started', items: ['Introduction'] },
@@ -57,6 +43,10 @@ export const SidebarWithContent = () => {
     setIsSidebarOpen(false);
   };
 
+  const handleBackButtonClick = () => {
+    setBlockContent(null);
+  };
+
   return (
     <div className="flex min-h-screen relative">
       <button
@@ -72,9 +62,7 @@ export const SidebarWithContent = () => {
         />
       )}
       <aside
-        className={`fixed top-0 left-0 z-20 h-screen w-60 bg-white shadow-md p-4 sm:p-6 flex flex-col justify-between transition-transform duration-300 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } sm:translate-x-0`}
+        className={`fixed top-0 left-0 z-20 h-screen w-60 bg-white shadow-md p-4 sm:p-6 flex flex-col justify-between transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0`}
       >
         <div className="flex-grow">
           <input
@@ -110,8 +98,19 @@ export const SidebarWithContent = () => {
             ))}
           </nav>
         </div>
+        {blockContent && (
+          <div className="mt-auto">
+            <button
+              onClick={handleBackButtonClick}
+              className="flex items-center p-2 text-red-600 bg-red-400 rounded transition-colors"
+            >
+              <ArrowLeft size={24} className="mr-2" />
+              Back
+            </button>
+          </div>
+        )}
       </aside>
-      <main className="flex-1 p-4 sm:p-6 lg:p-8 bg-gray-50 overflow-y-auto pt-16 transition-all duration-300">
+      <main className={`flex-1 p-4 sm:p-6 lg:p-8 bg-gray-50 overflow-y-auto pt-16 transition-all duration-300 ${isSidebarOpen ? "ml-60" : "ml-0 sm:ml-60"}`}>
         {blockContent ? (
           <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: blockContent }} />
         ) : (
