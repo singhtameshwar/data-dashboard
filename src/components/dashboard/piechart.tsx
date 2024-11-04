@@ -44,7 +44,6 @@ export function Piechart() {
                 <tr className="text-gray-500 border-b border-gray-800">
                   <th className="py-2">Customer</th>
                   <th className="py-2">Status</th>
-                  <th className="py-2">Customer ID</th>
                   <th className="py-2">Retained</th>
                   <th className="py-2">Amount</th>
                 </tr>
@@ -63,9 +62,8 @@ export function Piechart() {
                     </div>
                   </td>
                   <td><Badge color="red">Member</Badge></td>
-                  <td className="text-gray-300">#74568320</td>
                   <td className="text-gray-400">5 min ago</td>
-                  <td className="font-semibold text-white">$12,408.20</td>
+                  <td className="font-semibold text-gray-400">$12,408.20</td>
                 </tr>
 
                 <tr className="border-b border-gray-800">
@@ -81,9 +79,8 @@ export function Piechart() {
                     </div>
                   </td>
                   <td><Badge color="orange">Signed Up</Badge></td>
-                  <td className="text-gray-300">#23134855</td>
                   <td className="text-gray-400">10 min ago</td>
-                  <td className="font-semibold text-white">$201.50</td>
+                  <td className="font-semibold text-gray-400">$201.50</td>
                 </tr>
 
                 <tr>
@@ -99,9 +96,8 @@ export function Piechart() {
                     </div>
                   </td>
                   <td><Badge color="green">New Customer</Badge></td>
-                  <td className="text-gray-300">#54394837</td>
                   <td className="text-gray-400">15 min ago</td>
-                  <td className="font-semibold text-white">$2,856.03</td>
+                  <td className="font-semibold text-gray-400">$2,856.03</td>
                 </tr>
               </tbody>
             </table>
