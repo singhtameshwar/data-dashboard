@@ -1,5 +1,5 @@
 "use client";
-import { TrendingUp, DollarSign, ArrowRight } from "lucide-react"; // Importing the ArrowRight icon
+import { TrendingUp, DollarSign, ArrowRight } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis, Tooltip } from "recharts";
 import {
   Card,
@@ -30,90 +30,50 @@ const chartConfig = {
 
 export const Content1 = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 p-6">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-3 lg:gap-8">
-        <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">
-          <div>
-            <div className="flex items-center text-gray-700">
-              <DollarSign className="mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Total Sales</h2>
-            </div>
-            <div className="stats mt-4">
-              <div className="stat  p-4 rounded-lg shadow-sm">
-                <div className="stat-title text-gray-600">Downloads</div>
-                <div className="stat-value text-lg font-bold">31K</div>
-                <div className="stat-desc text-sm text-green-600">Jan 1st - Feb 1st</div>
+    <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-6 md:p-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-3 lg:gap-6">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <div
+            key={index}
+            className="bg-white border border-gray-200 shadow-lg rounded-lg p-4 md:p-6 flex flex-col justify-between transition-transform duration-300 hover:shadow-xl"
+          >
+            <div>
+              <div className="flex items-center text-gray-700">
+                <DollarSign className="mr-2 text-blue-600" />
+                <h2 className="text-lg font-semibold md:text-xl">Total Sales</h2>
+              </div>
+              <div className="stats mt-2 md:mt-4">
+                <div className="stat p-2 md:p-4 rounded-lg shadow-sm">
+                  <div className="stat-title text-gray-600 text-xs md:text-sm">
+                    {index === 0 ? "Downloads" : index === 1 ? "New Users" : "New Registers"}
+                  </div>
+                  <div className="stat-value text-lg font-bold md:text-xl">
+                    {index === 0 ? "31K" : index === 1 ? "4,200" : "1,200"}
+                  </div>
+                  <div className="stat-desc text-xs text-green-600 md:text-sm">
+                    {index === 0
+                      ? "Jan 1st - Feb 1st"
+                      : index === 1
+                      ? "↗︎ 400 (22%)"
+                      : "↘︎ 90 (14%)"}
+                  </div>
+                </div>
               </div>
             </div>
+            <button className="mt-2 flex items-center text-blue-500 hover:underline">
+              Read More <ArrowRight className="ml-1" />
+            </button>
           </div>
-
-          <button className="mt-4 flex items-center text-blue-500 hover:underline">
-            Read More <ArrowRight className="ml-1" />
-          </button>
-        </div>
-
-        <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">
-          <div>
-            <div className="flex items-center text-gray-700">
-              <DollarSign className="mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Total Sales</h2>
-            </div>
-            <div className="stats mt-4">
-              <div className="stat  p-4 rounded-lg shadow-sm">
-                <div className="stat-title text-gray-600">New Users</div>
-                <div className="stat-value text-lg font-bold">4,200</div>
-                <div className="stat-desc text-sm text-green-600">↗︎ 400 (22%)</div>
-              </div>
-            </div>
-          </div>
-
-          <button className="mt-4 flex items-center text-blue-500 hover:underline">
-            Read More <ArrowRight className="ml-1" />
-          </button>
-        </div>
-
-        <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">
-          <div>
-            <div className="flex items-center text-gray-700">
-              <DollarSign className="mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Total Sales</h2>
-            </div>
-            <div className="stats mt-4">
-              <div className="stat  p-4 rounded-lg shadow-sm">
-                <div className="stat-title text-gray-600">New Registers</div>
-                <div className="stat-value text-lg font-bold">1,200</div>
-                <div className="stat-desc text-sm text-red-600">↘︎ 90 (14%)</div>
-              </div>
-            </div>
-          </div>
-          <button className="mt-4 flex items-center text-blue-500 hover:underline">
-            Read More <ArrowRight className="ml-1" />
-          </button>
-        </div>
-
-        <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">
-          <div>
-            <div className="flex items-center text-gray-700">
-              <DollarSign className="mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Total Sales</h2>
-            </div>
-            <div className="stats mt-4">
-              <div className="stat p-4 rounded-lg shadow-sm">
-                <div className="stat-title text-gray-600">New Registers</div>
-                <div className="stat-value text-lg font-bold">1,200</div>
-                <div className="stat-desc text-sm text-red-600">↘︎ 90 (14%)</div>
-              </div>
-            </div>
-          </div>
-          <button className="mt-4 flex items-center text-blue-500 hover:underline">
-            Read More <ArrowRight className="ml-1" />
-          </button>
-        </div>
+        ))}
       </div>
 
-
-      <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-6 flex justify-center items-center h-full lg:h-[550px] lg:col-span-2">
-        <BarChart width={300} height={250} data={chartData}>
+      <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-4 md:p-6 flex justify-center items-center h-full lg:h-[550px] lg:col-span-2">
+        <BarChart
+          width={250}
+          height={200}
+          data={chartData}
+          className="w-full h-full max-w-xs md:max-w-md lg:max-w-full"
+        >
           <CartesianGrid vertical={false} />
           <XAxis
             dataKey="month"
