@@ -15,7 +15,6 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "#4285F4" },
   { browser: "safari", visitors: 200, fill: "#FF6D00" },
@@ -30,14 +29,10 @@ export function Piechart() {
   }, []);
 
   return (
-
     <>
-      <div id="parent" className="flex">
-
-
-
-        <Card className="">
-          <div className="text-white rounded-lg shadow-md p-6 max-w-3xl mx-auto mt-8">
+      <div id="parent" className="flex flex-wrap gap-2 p-4 pl-10">
+        <Card>
+          <div className="rounded-lg shadow-md p-6 max-w-3xl mx-auto mt-8">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold">Recent Activity</h2>
               <Button variant="ghost" className="flex items-center space-x-1">
@@ -58,7 +53,7 @@ export function Piechart() {
                 <tr className="border-b border-gray-800">
                   <td className="flex items-center py-4 space-x-3">
                     <img
-                      src="https://via.placeholder.com/32"
+                      src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg"
                       alt="profile"
                       className="rounded-full w-8 h-8"
                     />
@@ -67,7 +62,7 @@ export function Piechart() {
                       <p className="text-sm text-gray-400">ronalrcs@mail.com</p>
                     </div>
                   </td>
-                  <td><Badge>Member</Badge></td>
+                  <td><Badge color="red">Member</Badge></td>
                   <td className="text-gray-300">#74568320</td>
                   <td className="text-gray-400">5 min ago</td>
                   <td className="font-semibold text-white">$12,408.20</td>
@@ -76,7 +71,7 @@ export function Piechart() {
                 <tr className="border-b border-gray-800">
                   <td className="flex items-center py-4 space-x-3">
                     <img
-                      src="https://via.placeholder.com/32"
+                      src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4380.jpg"
                       alt="profile"
                       className="rounded-full w-8 h-8"
                     />
@@ -94,7 +89,7 @@ export function Piechart() {
                 <tr>
                   <td className="flex items-center py-4 space-x-3">
                     <img
-                      src="https://via.placeholder.com/32"
+                      src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4381.jpg"
                       alt="profile"
                       className="rounded-full w-8 h-8"
                     />
@@ -112,13 +107,9 @@ export function Piechart() {
             </table>
           </div>
         </Card>
-
-
-
-
-        <div id="second" className="">
-          <CardContent className="flex-1 pb-0">
-            <div className="mx-auto aspect-square max-w-[250px]">
+        <div id="second" className="flex flex-1 items-center justify-center">
+          <CardContent className="flex bg-white border rounded-lg shadow-md items-center justify-center">
+            <div className="aspect-square max-w-[250px]">
               <PieChart width={250} height={250}>
                 <Tooltip />
                 <Pie
@@ -163,8 +154,7 @@ export function Piechart() {
             </div>
           </CardContent>
         </div>
-      </div >
+      </div>
     </>
-
   );
 }

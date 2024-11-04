@@ -2,7 +2,7 @@ import { BarChart, Search } from "lucide-react";
 
 export default function Searchbar() {
   return (
-    <div className="navbar bg-base-200 shadow-lg sticky top-0 px-4 z-10">
+    <div className="navbar bg-base-200 shadow-lg px-4 sticky top-0 z-50">
       <div className="navbar-start flex items-center space-x-4">
         <div className="flex items-center">
           <BarChart className="mr-2" />
@@ -16,7 +16,7 @@ export default function Searchbar() {
           className="input input-bordered w-full max-w-xs"
         />
         <button className="btn btn-ghost btn-circle">
-          <Search />
+          <Search/>
         </button>
       </div>
 

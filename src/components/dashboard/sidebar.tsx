@@ -38,7 +38,6 @@ export const SidebarWithContent = () => {
 
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar with a fixed position */}
       <aside className="w-60 h-screen fixed p-4 sm:p-6 bg-white shadow-md">
         <input
           type="text"
