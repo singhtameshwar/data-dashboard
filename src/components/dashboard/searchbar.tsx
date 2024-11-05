@@ -9,17 +9,6 @@ export default function Searchbar() {
           <h2 className="text-lg font-semibold">Data Dashboard</h2>
         </div>
       </div>
-      <div className="navbar-center w-full max-w-lg flex items-center justify-center space-x-2">
-        <input
-          type="text"
-          placeholder="Search"
-          className="input input-bordered w-full max-w-xs"
-        />
-        <button className="btn btn-ghost btn-circle">
-          <Search/>
-        </button>
-      </div>
-
       <div className="navbar-end flex items-center space-x-4">
         <button className="btn btn-ghost btn-circle relative">
           <div className="indicator">

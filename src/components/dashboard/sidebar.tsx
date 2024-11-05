@@ -48,7 +48,7 @@ export const SidebarWithContent = () => {
   };
 
   return (
-    <div className="flex min-h-screen relative">
+    <div className="flex min-h-screen relative bg-gray-100">
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className="absolute top-4 left-4 z-20 text-gray-600 sm:hidden"
@@ -62,13 +62,13 @@ export const SidebarWithContent = () => {
         />
       )}
       <aside
-        className={`fixed top-0 left-0 z-20 h-screen w-60 bg-white shadow-md p-4 sm:p-6 flex flex-col justify-between transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0`}
+        className={`fixed top-0 left-0 z-20 h-screen w-60 bg-white shadow-lg p-4 sm:p-6 flex flex-col justify-between transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0`}
       >
-        <div className="flex-grow">
+        <div className="flex-grow mt-[50px]">
           <input
             type="text"
             placeholder="Search..."
-            className="mb-4 p-2 w-full border border-gray-300 rounded"
+            className="mb-4 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-gray-800"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -76,7 +76,7 @@ export const SidebarWithContent = () => {
             {links.map((section) => (
               <div className="space-y-2" key={section.category}>
                 <div className="flex items-center space-x-2">
-                  <h2 className="text-sm font-semibold tracking-widest uppercase">
+                  <h2 className="text-lg font-semibold tracking-widest uppercase text-gray-600">
                     {section.category}
                   </h2>
                 </div>
@@ -88,7 +88,7 @@ export const SidebarWithContent = () => {
                         key={item}
                         href="#"
                         onClick={() => handleLinkClick(item)}
-                        className="block p-1 hover:bg-gray-200 rounded transition-colors"
+                        className="block p-3 hover:bg-gray-200 rounded-md transition-colors text-gray-800 font-medium"
                       >
                         {item}
                       </a>
@@ -102,7 +102,7 @@ export const SidebarWithContent = () => {
           <div className="mt-auto">
             <button
               onClick={handleBackButtonClick}
-              className="flex items-center p-2 text-red-600 bg-red-400 rounded transition-colors"
+              className="flex items-center p-3 text-white bg-red-500 rounded-md shadow hover:bg-red-600 transition-colors"
             >
               <ArrowLeft size={24} className="mr-2" />
               Back
