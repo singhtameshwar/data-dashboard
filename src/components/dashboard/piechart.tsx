@@ -1,16 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Badge, ChevronDown, TrendingUp } from "lucide-react";
+import { Badge, ChevronDown } from "lucide-react";
 import { Label, Pie, PieChart, Tooltip } from "recharts";
 
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
@@ -30,26 +26,26 @@ export function Piechart() {
 
   return (
     <>
-      <div id="parent" className="flex flex-wrap gap-2 p-4 pl-10">
-        <Card>
-          <div className="rounded-lg shadow-md p-6 max-w-3xl mx-auto mt-8">
+      <div id="parent" className="flex flex-wrap gap-4 p-4 sm:p-6">
+        <Card className="w-full sm:w-[48%] ">
+          <div className="rounded-lg shadow-md p-4 sm:p-6 mx-auto">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold">Recent Activity</h2>
+              <h2 className="text-md sm:text-lg font-semibold">Recent Activity</h2>
               <Button variant="ghost" className="flex items-center space-x-1">
                 Last 24h <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
             </div>
-            <table className="w-full text-left">
+            <table className="w-full text-left text-sm sm:text-base">
               <thead>
-                <tr className="text-gray-500 border-b border-gray-800">
+                <tr className="text-gray-500 border-b border-gray-300">
                   <th className="py-2">Customer</th>
                   <th className="py-2">Status</th>
-                  <th className="py-2">Retained</th>
+                  <th className="py-2">Retained</th>5
                   <th className="py-2">Amount</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-800">
+                <tr className="border-b border-gray-300">
                   <td className="flex items-center py-4 space-x-3">
                     <img
                       src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg"
@@ -58,7 +54,7 @@ export function Piechart() {
                     />
                     <div>
                       <p className="font-medium">Ronald Richards</p>
-                      <p className="text-sm text-gray-400">ronalrcs@mail.com</p>
+                      <p className="text-xs sm:text-sm text-gray-400">ronalrcs@mail.com</p>
                     </div>
                   </td>
                   <td><Badge color="red">Member</Badge></td>
@@ -66,7 +62,7 @@ export function Piechart() {
                   <td className="font-semibold text-gray-400">$12,408.20</td>
                 </tr>
 
-                <tr className="border-b border-gray-800">
+                <tr className="border-b border-gray-300">
                   <td className="flex items-center py-4 space-x-3">
                     <img
                       src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4380.jpg"
@@ -75,7 +71,7 @@ export function Piechart() {
                     />
                     <div>
                       <p className="font-medium">Darrell Steward</p>
-                      <p className="text-sm text-gray-400">steward.darell@mail.com</p>
+                      <p className="text-xs sm:text-sm text-gray-400">steward.darell@mail.com</p>
                     </div>
                   </td>
                   <td><Badge color="orange">Signed Up</Badge></td>
@@ -92,7 +88,7 @@ export function Piechart() {
                     />
                     <div>
                       <p className="font-medium">Marvin McKinney</p>
-                      <p className="text-sm text-gray-400">mckinney.jr@mail.com</p>
+                      <p className="text-xs sm:text-sm text-gray-400">mckinney.jr@mail.com</p>
                     </div>
                   </td>
                   <td><Badge color="green">New Customer</Badge></td>
@@ -103,18 +99,18 @@ export function Piechart() {
             </table>
           </div>
         </Card>
-        <div id="second" className="flex flex-1 items-center justify-center">
-          <CardContent className="flex bg-white border rounded-lg shadow-md items-center justify-center">
-            <div className="aspect-square max-w-[250px]">
-              <PieChart width={250} height={250}>
+        <div id="second" className="flex w-full sm:w-[48%] items-center justify-center">
+          <CardContent className="flex bg-white border rounded-lg shadow-md items-center justify-center p-4 sm:p-6">
+            <div className="aspect-square w-[200px] sm:w-[250px]">
+              <PieChart width={200} height={200}>
                 <Tooltip />
                 <Pie
                   data={chartData}
                   dataKey="visitors"
                   nameKey="browser"
-                  innerRadius={60}
-                  outerRadius={80}
-                  strokeWidth={5}
+                  innerRadius={50}
+                  outerRadius={70}
+                  strokeWidth={4}
                 >
                   <Label
                     content={({ viewBox }) => {
@@ -129,14 +125,14 @@ export function Piechart() {
                             <tspan
                               x={viewBox.cx}
                               y={viewBox.cy}
-                              className="fill-foreground text-3xl font-bold"
+                              className="fill-foreground text-xl sm:text-3xl font-bold"
                             >
                               {totalVisitors.toLocaleString()}
                             </tspan>
                             <tspan
                               x={viewBox.cx}
-                              y={(viewBox.cy || 0) + 24}
-                              className="fill-muted-foreground"
+                              y={(viewBox.cy || 0) + 20}
+                              className="fill-muted-foreground text-sm sm:text-base"
                             >
                               Visitors
                             </tspan>
